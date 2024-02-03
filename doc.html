@@ -28,32 +28,151 @@
     <aside class="doc__nav">
       <ul>
         <li class="js-btn selected">Get Started</li>
-        <li class="js-btn">Configuration</li>
+        <li class="js-btn">Locale</li>
+        <li class="js-btn">Provider</li>
+        <!-- <li class="js-btn">Configuration</li>
         <li class="js-btn">Keybindings</li>
-        <li class="js-btn">Issues</li>
+        <li class="js-btn">Issues</li> -->
       </ul>
     </aside>
     <article class="doc__content">
       <section class="js-section">
         <h3 class="section__title">Get Started</h3>
-        <p>Fauxify is a PHP library designed for developers to generate synthetic data efficiently. It simplifies the creation of realistic fake data for database testing and development, offering a user-friendly alternative similar to FakerPHP. With a range of predefined data providers and customization options.</p>
+        <p>Fauxify is a PHP library designed for developers to generate synthetic data efficiently. It simplifies the
+          creation of realistic fake data for database testing and development, offering a user-friendly alternative
+          similar to FakerPHP. With a range of predefined data providers and customization options.</p>
         <h3 class="section__title">Installation</h3>
         <div class="code__block code__block--notabs">
           <pre class="code code--block">
               <code>
-                $ scribbler  ——config
-                  {
-                    “encryption”: true, 
-                    “highlighting“: true,
-                    “prettyTable”: false,
-                    “font”: [“Helvetica”, “sans-serif”],
-                    “folder”: “~/Desktop“
-                  }
+                composer require fauxify/fauxify
               </code>
             </pre>
         </div>
+
+        <!-- Basic Usage -->
+        <h3 class="section__title">Basic Usage</h3>
+        <p>After installing the library, you can start using it by creating a new instance of the Fauxify class. The following example demonstrates how to generate a random name using the library.</p>
+
+        <p>If haven't include vendor autoload in entry point/page.</p>
+        <div class="code__block code__block--notabs">
+          <pre class="code code--block">
+              <code>
+                require_once 'vendor/autoload.php';
+              </code>
+          </pre>
+        </div>
+
+        <p>Then,</p>
+
+        <div class="code__block code__block--notabs">
+          <pre class="code code--block">
+              <code>
+                use Fauxify\Fauxify\Fauxify;
+
+                $fauxify = Fauxify::create();
+                echo $faux->name();
+              </code>
+          </pre>
+        </div>
+
       </section>
+
+      <!-- Locale -->
       <section class="js-section">
+        <h3 class="section__title">Locale</h3>
+        <p>Fauxify has the objective of generating two types of fake data and supports only two locales: "Nep" and "Eng," with "Eng" being the default.</p>
+        
+        <h5>Eng / Default</h5>
+        <div class="code__block code__block--notabs">
+          <pre class="code code--block">
+              <code>
+                $fauxify = Fauxify::create();
+
+                // Or
+
+                $fauxify = Fauxify::create("Eng");
+              </code>
+          </pre>
+        </div>
+        
+        <h5>Nep</h5>
+        <div class="code__block code__block--notabs">
+          <pre class="code code--block">
+              <code>
+                $fauxify = Fauxify::create("Nep");
+              </code>
+          </pre>
+        </div>
+        
+      </section>
+      
+
+      <!-- Provider -->
+      <section class="js-section">
+        <h3 class="section__title">Provider</h3>
+        
+        
+        <h5>Unique</h5>
+        <div class="code__block code__block--notabs">
+          <pre class="code code--block">
+              <code>
+                $fauxify->city('unique');
+
+                // Or
+
+                for($i = 0; $i < 10; $i++) {
+                  echo $fauxify->city('unique');
+                }
+              </code>
+          </pre>
+        </div>
+
+        <p>
+          It has a range of predefined data providers, each with its own unique set of methods. The following table
+          provides an overview of the available providers and their respective methods.
+        </p>
+        <table id="customers">
+          <tr>
+            <th>Porvider</th>
+            <th>Unique</th>
+            <th>Max</th>
+          </tr>
+          <tr>
+            <td>->name()</td>
+            <td>No</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>->maleName()</td>
+            <td>No</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>->femaleName()</td>
+            <td>No</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>->city()</td>
+            <td>Yes</td>
+            <td>33</td>
+          </tr>
+          <tr>
+            <td>->payment()</td>
+            <td>Yes</td>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>->mobileNumber()</td>
+            <td>No</td>
+            <td>---</td>
+          </tr>
+        </table>
+        
+      </section>
+
+      <!-- <section class="js-section">
         <h3 class="section__title">Configuration</h3>
         <p>Learn how to configure settings for Scribbler, such as your syntax highlighting preference and the default
           saving folder location.</p>
@@ -84,8 +203,9 @@
           te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates
           suavitate vituperatoribus.</p>
         <hr />
-      </section>
-      <section class="js-section">
+      </section> -->
+
+      <!-- <section class="js-section">
         <h3 class="section__title">Keybindings</h3>
         <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At
           eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat,
@@ -100,8 +220,8 @@
           te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates
           suavitate vituperatoribus.</p>
         <hr />
-      </section>
-      <section class="js-section">
+      </section> -->
+      <!-- <section class="js-section">
         <h3 class="section__title">Issues</h3>
         <p>Lorem ipsum dolor sit amet, scripta tibique indoctum sit ei, mel inani aeterno ad. Facer oratio ex per. At
           eam movet verear, in sea brute patrioque disputando, usu nonumes torquatos an. Ex his quaerendum intellegebat,
@@ -111,7 +231,7 @@
           concludaturque. Id qui malis abhorreant, mazim melius quo et. At eam altera dolorum, case dicant lobortis ius
           te, ad vel affert oportere reprehendunt. Quo no verterem deseruisse, mea brute postea te, ne per tacimates
           suavitate vituperatoribus.</p>
-      </section>
+      </section> -->
     </article>
   </div>
 
@@ -126,9 +246,9 @@
 
     // JavaScript code to update the current year
     const currentYearElement = document.getElementById('currentYear');
-        const currentDate = new Date();
-        const currentYear = currentDate.getFullYear();
-        currentYearElement.textContent = currentYear;
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    currentYearElement.textContent = currentYear;
   </script>
   <script src="assets/js/main.js"></script>
 </body>
