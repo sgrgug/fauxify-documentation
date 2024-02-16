@@ -16,7 +16,7 @@ if (document.getElementsByClassName('demo').length > 0) {
 
   
   
-            use Fauxify\Fauxify\Fauxify;
+            use Fauxify\\Fauxify\\Fauxify;
             
             $fauxify = Faker::create();
 

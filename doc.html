@@ -135,38 +135,81 @@
         <table id="customers">
           <tr>
             <th>Porvider</th>
+            <th>Params</th>
             <th>Unique</th>
             <th>Max</th>
           </tr>
           <tr>
             <td>->name()</td>
             <td>No</td>
+            <td>No</td>
             <td>---</td>
           </tr>
           <tr>
             <td>->maleName()</td>
+            <td>No</td>
             <td>No</td>
             <td>---</td>
           </tr>
           <tr>
             <td>->femaleName()</td>
             <td>No</td>
+            <td>No</td>
             <td>---</td>
           </tr>
           <tr>
             <td>->city()</td>
+            <td>['unique'] OR [NULL]</td>
             <td>Yes</td>
             <td>33</td>
           </tr>
           <tr>
             <td>->payment()</td>
+            <td>['unique'] OR [NULL]</td>
             <td>Yes</td>
             <td>5</td>
           </tr>
           <tr>
             <td>->mobileNumber()</td>
             <td>No</td>
+            <td>No</td>
             <td>---</td>
+          </tr>
+          <tr>
+            <td>->blogTitle()</td>
+            <td>[Size of Words] OR [NULL]</td>
+            <td>No</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>->blogContent()</td>
+            <td>[Size of Words] OR [NULL]</td>
+            <td>No</td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>->bank()</td>
+            <td>['unique'] OR [NULL]</td>
+            <td>Yes</td>
+            <td>54</td>
+          </tr>
+          <tr>
+            <td>->classABank()</td>
+            <td>['unique'] OR [NULL]</td>
+            <td>Yes</td>
+            <td>20</td>
+          </tr>
+          <tr>
+            <td>->classBBank()</td>
+            <td>['unique'] OR [NULL]</td>
+            <td>Yes</td>
+            <td>17</td>
+          </tr>
+          <tr>
+            <td>->classCBank()</td>
+            <td>['unique'] OR [NULL]</td>
+            <td>Yes</td>
+            <td>17</td>
           </tr>
         </table>
         
